@@ -1,17 +1,25 @@
-# UDPBD-A5-V11
 ![img_photo]
-OpenWRT UDPBD for A5-V11 3G/4G Mini Router
+<h2 align="left">OpenWRT UDPBD for A5-V11 3G/4G Mini Router</h2>
 
-To run the UDPBD on the 3g/4g A5-v11 Router
-You will need:
--CH314A programmer
--8MB Flash W25Q64FV or similar
--Any USB Drive
-A5-V11 Router:
-Program the image (below) to 8mb flash
-swap memory chip on router
-Router is Done!
-USB Drive:
+<h3 align="left">Features:</h3>  
+
+- Blazing 4.2mb/s speed   
+- exFAT Support  
+- external HDD, SSD, USB Drives up to 2TB  
+- Lower power consumption by 45% ( No more overheating ( heatsink still recommended ) )
+
+<h3 align="left">You will need:</h3>
+
+- A5-V11 3G/4G  
+- CH314A or other programmer  
+- 8MB Flash W25Q64FV or similar  
+- Any USB Drive
+
+A5-V11 Router:  
+Program the image (below) to 8mb flash  
+swap memory chip on router  
+Router is Done!  
+USB Drive:  
 Format USB to GUID partition table / GPT, exFat, Standart Cluster Size
 I highly recommend using GParted Live USB over Windows formatting
 Do standart USB config for PS2 (create CD/DVD folders, add backups, ARTs, e.t.c.)
