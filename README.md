@@ -19,7 +19,7 @@
 
 <h3 align="left">Router:</h3>
 
--Program the image (Releases) to 8mb flash  
+-Program the [image](https://github.com/GorGylka/UDPBD-A5-V11/releases/) to 8mb flash  
 -Swap memory chip on router  
 -Router is Done!  
 
@@ -33,7 +33,7 @@
 
 <h3 align="left">PS2:</h3>
 
--Place OPNPS2LD-v1.2.0-Beta-1973-88079d7-UDPBD.elf into bootable memory card  
+-Place [OPNPS2LD-v1.2.0-Beta-1973-88079d7-UDPBD.elf](https://github.com/GorGylka/UDPBD-A5-V11/releases/) into bootable memory card  
 -Delete/archive opl .cfg files, there are stored in:  
 mc0:/OPL/conf_network.cfg  
 mc0:/OPL/conf_opl.cfg  
