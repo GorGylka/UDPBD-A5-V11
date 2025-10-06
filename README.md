@@ -10,6 +10,7 @@
 
 
 <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/compare.jpg" width=70% height=70%>
+<img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/Speed.jpg">
 <h3 align="left">You will need:</h3>
 
 - A5-V11 3G/4G (You must have 4MB Flash / 32MB RAM)  
