@@ -14,16 +14,35 @@
 <h3 align="left">You will need:</h3>
 
 - A5-V11 3G/4G (You must have 4MB Flash / 32MB RAM)  
-- CH314A or other programmer  
-- 8MB Flash W25Q64FV or similar  
-- Any USB Drive
+- USB Drive in Fat32 (to flash Router once)  
+- USB Drive in exFAT (to run backups)  
 
 <h3 align="left">Router:</h3>
 
--Program the [image](https://github.com/GorGylka/UDPBD-A5-V11/releases/) to 8mb flash  
--Swap memory chip on router  
+-Transfer ```lede-ramips-rt305x-a5-v11-squashfs-sysupgrade.bin``` and ```uboot_usb_256_03.img``` to a root FAT32 flash drive  
+-Install [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)  
+-Plug Router to PC, connect via Putty with these connection settings: ```192.168.100.1``` / ```23``` / ```Telnet```, press ```Connect```  
+-Login ```admin```, Password ```admin```  
+-Type comands, 1 by 1:  
+```
+ls /media/sda1/
+```
+```
+mtd_write write /media/sda1/uboot_usb_256_03.img Bootloader
+```
+```
+mtd_write write /media/sda1/lede-ramips-rt305x-a5-v11-squashfs-sysupgrade.bin Kernel
+```
+```
+reboot
+```
+Correct output:  
+-Open Browser ```192.168.1.1```  
+(it take about 2 min to reboot)  
+-```Login``` --> ```Password Configuraion``` --> Password ```admin``` --> Confirmation ```admin``` --> interface ```LAN``` --> ```Save and Apply```  
+-Disconnect micro usb from Router, eject FAT32 USB, inject exFAT USB, connect micro usb  
+-go to ```192.168.1.1```, Log in, ```System``` --> ```Mount Points``` --> check that your exFAT USB drive is detected on ```/dev/sda1```  
 -Router is Done!  
-
 <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/flash_chip.jpg" width=50% height=50%>
 
 <h3 align="left">USB Drive:</h3>
