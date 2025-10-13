@@ -83,6 +83,7 @@ Settings->Default Menu->BDM Games->OK->Save Changes
 
 -If you don't see the list of games, first try setting up UDPBD with configured USB on your PC  
 -System does not have Plug-and-play feature. inject USB Drive before power on and eject after power off.  
+-keepalive.txt file will be created on your flash drive. This is not a bug, but a feature-prevent USB HDD drives from parking.  
 
 
 [img_photo]: https://github.com/GorGylka/UDPBD-A5-V11/blob/main/logo.jpg
