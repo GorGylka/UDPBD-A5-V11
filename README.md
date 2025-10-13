@@ -82,7 +82,7 @@ Settings->Default Menu->BDM Games->OK->Save Changes
 <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/max809ttr.jpg" width=30% height=30%>
 
 -If you don't see the list of games, first try setting up UDPBD with configured USB on your PC  
--I use 8 wire LAN cable. Cross 8 wire lan also works, but didnt test it on 4 wire / 4 cross wire  
+-System does not have Plug-and-play feature. inject USB Drive before power on and eject after power off.  
 
 
 [img_photo]: https://github.com/GorGylka/UDPBD-A5-V11/blob/main/logo.jpg
