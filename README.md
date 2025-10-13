@@ -41,7 +41,7 @@ Correct output:
 <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/2.jpg" width=50% height=50%>  
 -Open Browser ```192.168.1.1```  
 (it take about 2 min to reboot)  
--```Login``` --> ```Password Configuraion``` --> Password ```admin``` --> Confirmation ```admin``` --> interface ```LAN``` --> ```Save and Apply```  
+-```Login```(no password) --> ```Go to Password Configuraion``` --> Password ```admin``` --> Confirmation ```admin``` --> interface ```LAN``` --> ```Save and Apply```  
 <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/4.jpg" width=50% height=50%>  
 -Disconnect micro usb from Router, eject FAT32 USB, inject exFAT USB, connect micro usb  
 -Go to ```192.168.1.1```, Log in, ```System``` --> ```Mount Points``` --> check that your exFAT USB drive is detected on ```/dev/sda1```  
