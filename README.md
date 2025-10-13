@@ -22,6 +22,7 @@
 -Transfer ```lede-ramips-rt305x-a5-v11-squashfs-sysupgrade.bin``` and ```uboot_usb_256_03.img``` to a root FAT32 flash drive  
 -Install [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)  
 -Plug Router to PC, connect via Putty with these connection settings: ```192.168.100.1``` / ```23``` / ```Telnet```, press ```Connect```  
+<img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/1.jpg" width=50% height=50%>  
 -Login ```admin```, Password ```admin```  
 -Type comands, 1 by 1:  
 ```
@@ -37,13 +38,16 @@ mtd_write write /media/sda1/lede-ramips-rt305x-a5-v11-squashfs-sysupgrade.bin Ke
 reboot
 ```
 Correct output:  
+<img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/2.jpg" width=50% height=50%>  
 -Open Browser ```192.168.1.1```  
 (it take about 2 min to reboot)  
 -```Login``` --> ```Password Configuraion``` --> Password ```admin``` --> Confirmation ```admin``` --> interface ```LAN``` --> ```Save and Apply```  
+<img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/4.jpg" width=50% height=50%>  
 -Disconnect micro usb from Router, eject FAT32 USB, inject exFAT USB, connect micro usb  
--go to ```192.168.1.1```, Log in, ```System``` --> ```Mount Points``` --> check that your exFAT USB drive is detected on ```/dev/sda1```  
+-Go to ```192.168.1.1```, Log in, ```System``` --> ```Mount Points``` --> check that your exFAT USB drive is detected on ```/dev/sda1```  
+<img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/5.jpg" width=50% height=50%>  
 -Router is Done!  
-<img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/flash_chip.jpg" width=50% height=50%>
+
 
 <h3 align="left">USB Drive:</h3>
 
