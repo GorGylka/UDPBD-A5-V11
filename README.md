@@ -19,11 +19,11 @@
 
 <h3 align="left">Router:</h3>
 
--Transfer ```lede-ramips-rt305x-a5-v11-squashfs-sysupgrade.bin``` and ```uboot_usb_256_03.img``` to a root FAT32 flash drive  
+-Transfer ```lede-ramips-rt305x-a5-v11-squashfs-sysupgrade.bin``` and ```uboot_usb_256_03.img``` to a root FAT32 flash drive, plug into router  
 -Install [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)  
 -Plug Router to PC, connect via Putty with these connection settings: ```192.168.100.1``` / ```23``` / ```Telnet```, press ```Connect```  
 <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/1.jpg" width=50% height=50%>  
--Login ```admin```, Password ```admin```  
+-Login ```admin```, Password ```admin``` (blind input)  
 -Type comands, 1 by 1:  
 ```
 ls /media/sda1/
