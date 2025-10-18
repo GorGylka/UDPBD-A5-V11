@@ -17,9 +17,10 @@
 - USB Drive in Fat32 (to flash Router once)  
 - USB Drive in exFAT (to run backups)  
 
-<h3 align="left">Router:</h3>
+<h2 align="left">Router:</h2>  
+<h3 align="left">Software Method:</h3>  
 
--Transfer ```lede-ramips-rt305x-a5-v11-squashfs-sysupgrade.bin``` and ```uboot_usb_256_03.img``` to a root FAT32 flash drive, plug into router  
+-Transfer ```lede-ramips-rt305x-a5-v11-squashfs-sysupgrade.bin``` and ```uboot_usb_256_03.img``` to a root FAT32 USB, plug USB into router  
 -Install [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)  
 -Plug Router to PC, connect via Putty with these connection settings: ```192.168.100.1``` / ```23``` / ```Telnet```, press ```Connect```  
 <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/1.jpg" width=50% height=50%>  
@@ -47,15 +48,18 @@ Correct output:
 -Go to ```192.168.1.1```, Log in, ```System``` --> ```Mount Points``` --> check that your exFAT USB drive is detected on ```/dev/sda1```  
 <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/5.jpg" width=50% height=50%>  
 -Router is Done!  
+<h3 align="left">Hardware Method:</h3> 
 
+-Flash ```OpenWRT_17.01.7_MX25L3205.bin``` via CH341A or any compatible BIOS programmer  
+-Router is Done!  
 
-<h3 align="left">USB Drive:</h3>
+<h2 align="left">USB Drive:</h2>
 
 -Format USB to GUID Partition Table (GPT), exFat, Standart Cluster Size  
 (I highly recommend using [GParted Live USB](https://gparted.org/liveusb.php) over Windows formatting)  
 -Do standart USB config for PS2 (create CD/DVD folders, add backups, ARTs, e.t.c.)
 
-<h3 align="left">PS2:</h3>
+<h2 align="left">PS2:</h2>
 
 -Place [OPNPS2LD-v1.2.0-Beta-1973-88079d7-UDPBD.elf](https://github.com/GorGylka/UDPBD-A5-V11/releases/) into bootable memory card  
 -Delete/archive opl .cfg files, there are stored in:  
@@ -68,7 +72,7 @@ mc0:/OPL/conf_opl.cfg
 Settings->BDM Start Mode->Manual  
 Settings->Default Menu->BDM Games->OK->Save Changes  
 
-<h3 align="left">Notes:</h3>
+<h2 align="left">Notes:</h2>
 
 -Router take some time to start and init. I didn't time it exactly, please wait 2 minutes in FMCB Menu or press Start ->Exit -> (run OPL again)  
 
