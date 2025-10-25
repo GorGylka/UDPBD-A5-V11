@@ -72,16 +72,20 @@ mc0:/OPL/conf_opl.cfg
 Settings->BDM Start Mode->Manual  
 Settings->Default Menu->BDM Games->OK->Save Changes  
 
+<h3 align="left">PSXmemcard Users:</h3>  
+
+-Place the contents of ```psxmemcard.zip``` in the root of your ```SD2PSX``` / ```PSXMemCard Gen2``` / ```PSXMemCard Gen1``` / ```PicoMemcard+```  
+
 <h2 align="left">Notes:</h2>
 
--Router take some time to start and init. I didn't time it exactly, please wait 2 minutes in FMCB Menu or press Start ->Exit -> (run OPL again)  
+-Router take 30 seconds to start and init drive. Please wait 1 minute in FMCB Menu before start OPL or press Start ->Exit -> (run OPL again).  
 
 -I disable WiFi and disable unsoldered LANs to reduce power consumption, but it still strongly recommend:  
  - Heatsink on Ralink Chip 
 
 <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/heatsink.jpg" width=30% height=30%>
  
- - Hardmod MAX809TTR / ADM809 (Router doesn't always turn on after hard reboot without it)  
+ - Hardmod MAX809TTR / ADM809 (Router doesn't always turn on after hard reboot, without it,)  
 
 <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/max809ttr.jpg" width=30% height=30%>
 
