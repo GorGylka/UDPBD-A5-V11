@@ -72,7 +72,7 @@ mc0:/OPL/conf_opl.cfg
 Settings->BDM Start Mode->Manual  
 Settings->Default Menu->BDM Games->OK->Save Changes  
 
-<h3 align="left">PSXmemcard Users:</h3>  
+<h3 align="left">PSxMemCard Users:</h3>  
 
 -Place the contents of ```psxmemcard.zip``` in the root of your ```SD2PSX``` / ```PSXMemCard Gen2``` / ```PSXMemCard Gen1``` / ```PicoMemcard+```  
 
