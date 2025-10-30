@@ -1,4 +1,3 @@
-<meta name="google-site-verification" content="QzuYuNoVNI-gncgbu8z88kLcUo0Ffirk2EhNjIxrnC8" />
 
 ![img_photo]
 <h2 align="left">OpenWRT UDPBD for A5-V11 3G/4G Mini Router</h2>
