@@ -62,6 +62,25 @@ Correct output:
 
 <h2 align="left">PS2:</h2>
 
+<h3 align="left">1st Method (Using my dump):</h3>  
+<h3 align="left">You will need:</h3>
+
+- FAT32 USB Drive
+- 8MB MemoryCard (orig or clone, 64mb and more __not supported__)      
+- Ability to run ulaunchELF  
+
+-Place ```FMCB-OPENTUNA``` folder into root FAT32 USB Drive, insert into PS2  
+-Run uLaunchELF  
+-Run mass:/FMCB-OPENTUNA/FMCBInstaller.elf  
+-Restore MC ( Press ```R1``` ```R1``` ```Down``` ```Down``` ```X``` ), Confirm  
+(careful, it will format your MemoryCard)  
+-Install FMCB Multi-install ( Press ```L1``` ```L1``` ```Down``` ```X``` ), Confirm  
+-Exit, Reboot PS2, Eject USB from PS2  
+
+This will install the latest FMCB and OPENTUNA on one card. FMCB automatically launches uLaunchELF, which launches OPL with a perfectly calculated timer to ensure the router has time to boot. If you have a PS2 90000, or your MC is a clone, you can run the OpenTuna exploit, which then does the same. To open the FMCB menu, hold the triangle while turning on your PS2 until the menu appears.  
+This combination of Apps should work on most (if not all) Slim PS2
+
+<h3 align="left">2nd Method (Manual):</h3>  
 -Place [OPNPS2LD-v1.2.0-Beta-1973-88079d7-UDPBD.elf](https://github.com/GorGylka/UDPBD-A5-V11/releases/) into bootable memory card  
 -Delete/archive opl .cfg files, there are stored in:  
 mc0:/OPL/conf_network.cfg  
@@ -73,13 +92,17 @@ mc0:/OPL/conf_opl.cfg
 Settings->BDM Start Mode->Manual  
 Settings->Default Menu->BDM Games->OK->Save Changes  
 
-<h3 align="left">PSxMemCard Users:</h3>  
+<h3 align="left">3rd Method (PSxMemCard Users):</h3>  
 
 -Place the contents of ```psxmemcard.zip``` in the root of your ```SD2PSX``` / ```PSXMemCard Gen2``` / ```PSXMemCard Gen1``` / ```PicoMemcard+```  
 
 <h2 align="left">Notes:</h2>
 
 -Router take 30 seconds to start and init drive. Please wait 1 minute in FMCB Menu before start OPL or press Start ->Exit -> (run OPL again).  
+
+-You cannot use any other version of OPL, UDPBD works only in this specific version.  
+
+-If USB drive is connected to the PS2 while OPL is running, UDPBD will not start.  
 
 -I disable WiFi and disable unsoldered LANs to reduce power consumption, but it still strongly recommend:  
  - Heatsink on Ralink Chip 
