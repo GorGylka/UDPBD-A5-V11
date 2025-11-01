@@ -72,6 +72,7 @@ Correct output:
 -Place ```FMCB-OPENTUNA``` folder into root FAT32 USB Drive, insert into PS2  
 -Run uLaunchELF  
 -Run mass:/FMCB-OPENTUNA/FMCBInstaller.elf  
+Make sure that the correct MC is inserted into PS2 slot 1, slot 2 is empty  
 -Restore MC ( Press ```R1``` ```R1``` ```Down``` ```Down``` ```X``` ), Confirm  
 (careful, it will format your MemoryCard)  
 -Install FMCB Multi-install ( Press ```L1``` ```L1``` ```Down``` ```X``` ), Confirm  
@@ -81,6 +82,7 @@ This will install the latest FMCB and OPENTUNA on one card. FMCB automatically l
 This combination of Apps should work on most (if not all) Slim PS2
 
 <h3 align="left">2nd Method (Manual):</h3>  
+
 -Place [OPNPS2LD-v1.2.0-Beta-1973-88079d7-UDPBD.elf](https://github.com/GorGylka/UDPBD-A5-V11/releases/) into bootable memory card  
 -Delete/archive opl .cfg files, there are stored in:  
 mc0:/OPL/conf_network.cfg  
