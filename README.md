@@ -106,6 +106,8 @@ Settings->Default Menu->BDM Games->OK->Save Changes
 
 -You cannot use any other version of OPL, UDPBD works only in this specific version.  
 
+-Connect USB to router Before power on, eject USB after power off. there is no Plug-in-play, all scripts run once its starts.  
+
 -If USB drive is connected to the PS2 while OPL is running, UDPBD will not start.  
 
 -I disable WiFi and disable unsoldered LANs to reduce power consumption, but it still strongly recommend:  
