@@ -132,4 +132,4 @@ Settings->Default Menu->BDM Games->OK->Save Changes
 
 I use Ubuntu 16 to build OpenWRT (the latest version, 24, doesn't work). This is OpenWRT 17.01.7, built via Buildroot. You can see the assembly instructions here:  
 [Начальная инструкция с картинками. Метод сборки через Buildroot](https://4pda.to/forum/index.php?showtopic=821686)  
-then place .config and files folder in your OpenWRT directory  
+then replace .config and place files folder in your OpenWRT directory  
