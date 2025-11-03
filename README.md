@@ -120,8 +120,16 @@ Settings->Default Menu->BDM Games->OK->Save Changes
 <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/max809ttr.jpg" width=30% height=30%>
 
 -If you don't see the list of games, first try setting up UDPBD with configured USB on your PC  
+
 -System does not have Plug-and-play feature. inject USB Drive before power on and eject after power off.  
+
 -keepalive.txt file will be created on your flash drive. This is not a bug, but a feature-prevent USB HDD drives from parking.  
 
 
 [img_photo]: https://github.com/GorGylka/UDPBD-A5-V11/blob/main/logo.jpg
+
+<h2 align="left">Building / Source:</h2>
+
+I use Ubuntu 16 to build OpenWRT (the latest version, 24, doesn't work). This is OpenWRT 17.01.7, built via Buildroot. You can see the assembly instructions here:  
+[Начальная инструкция с картинками. Метод сборки через Buildroot](https://4pda.to/forum/index.php?showtopic=821686)  
+then place .config and files folder in your OpenWRT directory  
