@@ -1,0 +1,20 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+
+start() {
+    (
+        sleep 20
+	touch /mnt/sda1/keepalive.txt
+	sleep 1
+        while true; do
+            echo "1" > /mnt/sda1/keepalive.txt
+            sync
+            sleep 10
+        done
+    ) &
+}
+
+stop() {
+    killall disk-keepalive 2>/dev/null
+}

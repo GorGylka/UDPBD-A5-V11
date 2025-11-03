@@ -1,0 +1,75 @@
+#!/bin/sh /etc/rc.common
+
+START=15
+
+start() {
+    echo "Disabling firewall and extra modules..."
+    
+    /etc/init.d/firewall stop 2>/dev/null
+    /etc/init.d/firewall disable 2>/dev/null
+    
+    MODULES="
+    fuse
+    gpio_button_hotplug
+    ip_set
+    ip_set_bitmap_ip
+    ip_set_bitmap_ipmac
+    ip_set_bitmap_port
+    ip_set_hash_ip
+    ip_set_hash_ipmark
+    ip_set_hash_ipport
+    ip_set_hash_ipportip
+    ip_set_hash_ipportnet
+    ip_set_hash_mac
+    ip_set_hash_net
+    ip_set_hash_netiface
+    ip_set_hash_netnet
+    ip_set_hash_netport
+    ip_set_hash_netportnet
+    ip_set_list_set
+    ipt_MASQUERADE
+    ipt_REJECT
+    iptable_filter
+    iptable_mangle
+    iptable_nat
+    ip_tables
+    nf_conntrack
+    nf_conntrack_ipv4
+    nf_conntrack_netlink
+    nf_conntrack_rtcache
+    nf_defrag_ipv4
+    nf_log_common
+    nf_log_ipv4
+    nf_nat
+    nf_nat_ipv4
+    nf_nat_masquerade_ipv4
+    nf_nat_redirect
+    nfnetlink
+    vfat
+    xt_LOG
+    xt_REDIRECT
+    xt_TCPMSS
+    xt_comment
+    xt_conntrack
+    xt_limit
+    xt_mac
+    xt_mark
+    xt_multiport
+    xt_nat
+    xt_set
+    xt_state
+    xt_tcpudp
+    xt_time
+    x_tables
+    "
+    
+    for mod in $MODULES; do
+        rmmod $mod 2>/dev/null
+    done
+    
+    echo "System optimized - extra modules removed"
+}
+
+stop() {
+    echo "No action needed"
+}

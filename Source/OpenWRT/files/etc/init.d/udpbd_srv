@@ -1,0 +1,7 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+start() {
+nice -n -20 udpbd-server.elf /dev/sda1
+/proc/$(pidof udpbd-server.elf)/oom_score_adj
+}
