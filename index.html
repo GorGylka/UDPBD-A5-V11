@@ -1,4 +1,127 @@
-# OpenWRT UDPBD for A5-V11 3G/4G Mini Router
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenWRT UDPBD for A5-V11 3G/4G Mini Router</title>
+  <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/GorGylka/UDPBD-A5-V11/refs/heads/main/logo.jpg">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg-color: #0d1117;
+      --text-color: #e6edf3;
+      --link-color: #58a6ff;
+      --code-bg: #161b22;
+      --border-color: #30363d;
+      --accent-color: #2f81f7;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: "Inter", system-ui, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      display: flex;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 280px;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 1rem 1.5rem;
+      border-right: 1px solid var(--border-color);
+      background-color: #0a0d11f2;
+    }
+
+    nav h2 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      color: #8b949e;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav li {
+      margin: 0.3rem 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--link-color);
+      font-size: 0.9rem;
+    }
+
+    nav a.active {
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      margin-left: 300px;
+      max-width: 900px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+
+    code {
+      background: var(--code-bg);
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    h1, h2, h3, h4 {
+      scroll-margin-top: 80px;
+    }
+
+    a {
+      color: var(--link-color);
+    }
+
+    ol, ul {
+      margin-left: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+      }
+      main {
+        margin: 0;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav id="toc">
+    <h2>Contents</h2>
+    <ul></ul>
+  </nav>
+
+  <main id="content">
+<h1>OpenWRT UDPBD for A5-V11 3G/4G Mini Router</h1>
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/GorGylka/UDPBD-A5-V11/refs/heads/main/logo.jpg" alt="Project Logo">
@@ -6,10 +129,12 @@
 
 <h2 align="left">Features</h2>
 
-- Blazing 4.2mb/s speed
-- exFAT Support
-- External HDD, SSD, USB Drives up to 2TB
-- Lower power consumption by 45% (No more overheating - heatsink still recommended)
+<ul>
+<li>Blazing 4.2mb/s speed</li>
+<li>exFAT Support</li>
+<li>External HDD, SSD, USB Drives up to 2TB</li>
+<li>Lower power consumption by 45% (No more overheating - heatsink still recommended)</li>
+</ul>
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/GorGylka/UDPBD-A5-V11/refs/heads/main/compare.jpg" width="70%" alt="Comparison">
@@ -18,9 +143,11 @@
 
 <h2>Requirements</h2>
 
-- A5-V11 3G/4G (You must have 4MB Flash / 32MB RAM)
-- USB Drive in Fat32 (to flash Router once)
-- USB Drive in exFAT (to run backups)
+<ul>
+<li>A5-V11 3G/4G (You must have 4MB Flash / 32MB RAM)</li>
+<li>USB Drive in Fat32 (to flash Router once)</li>
+<li>USB Drive in exFAT (to run backups)</li>
+</ul>
 
 <h2>Router Setup</h2>
 
@@ -41,12 +168,11 @@
   <li>Type commands, one by one:</li>
 </ol>
 
-```bash
-ls /media/sda1/
+<pre><code>ls /media/sda1/
 mtd_write write /media/sda1/uboot_usb_256_03.img Bootloader
 mtd_write write /media/sda1/lede-ramips-rt305x-a5-v11-squashfs-sysupgrade.bin Kernel
 reboot
-```
+</code></pre>
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/GorGylka/UDPBD-A5-V11/refs/heads/main/2.jpg" width="50%" alt="Command Output">
@@ -76,14 +202,18 @@ reboot
 
 <h3>Hardware Method</h3>
 
-- Flash <code>OpenWRT_17.01.7_MX25L3205.bin</code> via CH341A or any compatible BIOS programmer
-- Router is Done!
+<ul>
+<li>Flash <code>OpenWRT_17.01.7_MX25L3205.bin</code> via CH341A or any compatible BIOS programmer</li>
+<li>Router is Done!</li>
+</ul>
 
 <h2>USB Drive Setup</h2>
 
-- Format USB to GUID Partition Table (GPT), exFat, Standard Cluster Size
-- (I highly recommend using <a href="https://gparted.org/liveusb.php">GParted Live USB</a> or <a href="https://rufus.ie">Rufus</a> over Windows formatting)
-- Do standard USB config for PS2 (create CD/DVD folders, add backups, ARTs, etc.)
+<ul>
+<li>Format USB to GUID Partition Table (GPT), exFat, Standard Cluster Size</li>
+<li>(I highly recommend using <a href="https://gparted.org/liveusb.php">GParted Live USB</a> or <a href="https://rufus.ie">Rufus</a> over Windows formatting)</li>
+<li>Do standard USB config for PS2 (create CD/DVD folders, add backups, ARTs, etc.)</li>
+</ul>
 
 <h2>PS2 Setup</h2>
 
@@ -91,9 +221,11 @@ reboot
 
 <h4>Requirements:</h4>
 
-- FAT32 USB Drive
-- 8MB MemoryCard (orig or clone, 64mb and more <strong>not supported</strong>)
-- Ability to run ulaunchELF
+<ul>
+<li>FAT32 USB Drive</li>
+<li>8MB MemoryCard (orig or clone, 64mb and more <strong>not supported</strong>)</li>
+<li>Ability to run ulaunchELF</li>
+</ul>
 
 <ol>
   <li>Place <code>FMCB-OPENTUNA</code> folder into root FAT32 USB Drive, insert into PS2</li>
@@ -129,39 +261,83 @@ reboot
 
 <h3>3rd Method (PSxMemCard Users)</h3>
 
-- Place the contents of <code>psxmemcard.zip</code> in the root of your <code>SD2PSX</code> / <code>PSXMemCard Gen2</code> / <code>PSXMemCard Gen1</code> / <code>PicoMemcard+</code>
+<ul>
+<li>Place the contents of <code>psxmemcard.zip</code> in the root of your <code>SD2PSX</code> / <code>PSXMemCard Gen2</code> / <code>PSXMemCard Gen1</code> / <code>PicoMemcard+</code></li>
+</ul>
 
 <h2>Notes</h2>
 
-- Router takes 30 seconds to start and init drive. Please wait 1 minute in FMCB Menu before starting OPL or press Start → Exit → (run OPL again).
+<ul>
+<li>Router takes 30 seconds to start and init drive. Please wait 1 minute in FMCB Menu before starting OPL or press Start → Exit → (run OPL again).</li>
 
-- You cannot use any other version of OPL, UDPBD works only in this specific version.
+<li>You cannot use any other version of OPL, UDPBD works only in this specific version.</li>
 
-- Connect USB to router Before power on, eject USB after power off. There is no Plug-and-play, all scripts run once it starts.
+<li>Connect USB to router Before power on, eject USB after power off. There is no Plug-and-play, all scripts run once it starts.</li>
 
-- If USB drive is connected to the PS2 while OPL is running, UDPBD will not start.
+<li>If USB drive is connected to the PS2 while OPL is running, UDPBD will not start.</li>
 
-- I disable WiFi and disable unsoldered LANs to reduce power consumption, but it still strongly recommended:
-  - Heatsink on Ralink Chip
+<li>I disable WiFi and disable unsoldered LANs to reduce power consumption, but it still strongly recommended:
+  <ul>
+    <li>Heatsink on Ralink Chip</li>
+  </ul>
+</li>
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/GorGylka/UDPBD-A5-V11/refs/heads/main/heatsink.jpg" width="30%" alt="Heatsink">
 </div>
 
-  - Hardmod MAX809TTR / ADM809 (Router doesn't always turn on after hard reboot, Without this, the router needs to leave without power for 5 seconds so that it starts up normally and does not freeze at boot.)
+<ul>
+<li>Hardmod MAX809TTR / ADM809 (Router doesn't always turn on after hard reboot, Without this, the router needs to leave without power for 5 seconds so that it starts up normally and does not freeze at boot.)</li>
+</ul>
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/GorGylka/UDPBD-A5-V11/refs/heads/main/max809ttr.jpg" width="30%" alt="MAX809TTR">
 </div>
 
-- If you don't see the list of games, first try setting up UDPBD with configured USB on your PC
+<li>If you don't see the list of games, first try setting up UDPBD with configured USB on your PC</li>
 
-- System does not have Plug-and-play feature. Inject USB Drive before power on and eject after power off.
+<li>System does not have Plug-and-play feature. Inject USB Drive before power on and eject after power off.</li>
 
-- keepalive.txt file will be created on your flash drive. This is not a bug, but a feature - prevents USB HDD drives from parking.
+<li>keepalive.txt file will be created on your flash drive. This is not a bug, but a feature - prevents USB HDD drives from parking.</li>
+</ul>
 
 <h2>Building / Source</h2>
 
 <p>I use Ubuntu 16 to build OpenWRT (the latest version, 24, doesn't work). This is OpenWRT 17.01.7, built via Buildroot. You can see the assembly instructions here:</p>
 <p><a href="https://4pda.to/forum/index.php?showtopic=821686">Начальная инструкция с картинками. Метод сборки через Buildroot</a></p>
 <p>then replace .config and place files folder in your OpenWRT directory</p>
+  </main>
+
+  <script>
+    const tocList = document.querySelector('#toc ul');
+    const headings = document.querySelectorAll('main h2, main h3, main h4');
+    headings.forEach(h => {
+      const id = h.textContent.replace(/\s+/g, '-').toLowerCase();
+      h.id = id;
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="#${id}">${h.textContent}</a>`;
+      if (h.tagName === 'H3') li.style.marginLeft = '1rem';
+      if (h.tagName === 'H4') li.style.marginLeft = '2rem';
+      tocList.appendChild(li);
+    });
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      headings.forEach(h => {
+        const rect = h.getBoundingClientRect();
+        if (rect.top <= 150) current = h.id;
+      });
+      document.querySelectorAll('#toc a').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
