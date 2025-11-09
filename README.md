@@ -57,7 +57,7 @@ Correct output:
 <h2 align="left">USB Drive:</h2>
 
 -Format USB to GUID Partition Table (GPT), exFat, Standart Cluster Size  
-(I highly recommend using [GParted Live USB](https://gparted.org/liveusb.php) over Windows formatting)  
+(I highly recommend using [GParted Live USB](https://gparted.org/liveusb.php) or [Rufus](https://rufus.ie) over otWindows formatting)  
 -Do standart USB config for PS2 (create CD/DVD folders, add backups, ARTs, e.t.c.)
 
 <h2 align="left">PS2:</h2>
