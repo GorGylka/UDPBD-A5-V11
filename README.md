@@ -115,7 +115,7 @@ Settings->Default Menu->BDM Games->OK->Save Changes
 
 <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/heatsink.jpg" width=30% height=30%>
  
- - Hardmod MAX809TTR / ADM809 (Router doesn't always turn on after hard reboot, without it,)  
+ - Hardmod MAX809TTR / ADM809 (Router doesn't always turn on after hard reboot, Without this, the router needs to leave without power for 5 seconds so that it starts up normally and does not freeze at boot.)  
 
 <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/max809ttr.jpg" width=30% height=30%>
 
