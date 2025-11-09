@@ -1,0 +1,167 @@
+# OpenWRT UDPBD for A5-V11 3G/4G Mini Router
+
+<div align="center">
+  <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/logo.jpg" alt="Project Logo">
+</div>
+
+<h2 align="left">Features</h2>
+
+- Blazing 4.2mb/s speed
+- exFAT Support
+- External HDD, SSD, USB Drives up to 2TB
+- Lower power consumption by 45% (No more overheating - heatsink still recommended)
+
+<div align="center">
+  <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/compare.jpg" width="70%" alt="Comparison">
+  <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/Speed.jpg" alt="Speed Test">
+</div>
+
+<h2>Requirements</h2>
+
+- A5-V11 3G/4G (You must have 4MB Flash / 32MB RAM)
+- USB Drive in Fat32 (to flash Router once)
+- USB Drive in exFAT (to run backups)
+
+<h2>Router Setup</h2>
+
+<h3>Software Method</h3>
+
+<ol>
+  <li>Transfer <code>lede-ramips-rt305x-a5-v11-squashfs-sysupgrade.bin</code> and <code>uboot_usb_256_03.img</code> to a root FAT32 USB, plug USB into router</li>
+  <li>Install <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY</a></li>
+  <li>Plug Router to PC, connect via Putty with these connection settings: <code>192.168.100.1</code> / <code>23</code> / <code>Telnet</code>, press <code>Connect</code></li>
+</ol>
+
+<div align="center">
+  <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/1.jpg" width="50%" alt="PuTTY Connection">
+</div>
+
+<ol start="4">
+  <li>Login <code>admin</code>, Password <code>admin</code> (blind input)</li>
+  <li>Type commands, one by one:</li>
+</ol>
+
+```bash
+ls /media/sda1/
+mtd_write write /media/sda1/uboot_usb_256_03.img Bootloader
+mtd_write write /media/sda1/lede-ramips-rt305x-a5-v11-squashfs-sysupgrade.bin Kernel
+reboot
+```
+
+<div align="center">
+  <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/2.jpg" width="50%" alt="Command Output">
+</div>
+
+<ol start="6">
+  <li>Open Browser <code>192.168.1.1</code> (it takes about 2 min to reboot)</li>
+  <li><code>Login</code> (no password) → <code>Go to Password Configuration</code> → Password <code>admin</code> → Confirmation <code>admin</code> → interface <code>LAN</code> → <code>Save and Apply</code></li>
+</ol>
+
+<div align="center">
+  <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/4.jpg" width="50%" alt="Password Configuration">
+</div>
+
+<ol start="8">
+  <li>Disconnect micro USB from Router, eject FAT32 USB, inject exFAT USB, connect micro USB</li>
+  <li>Go to <code>192.168.1.1</code>, Log in, <code>System</code> → <code>Mount Points</code> → check that your exFAT USB drive is detected on <code>/dev/sda1</code></li>
+</ol>
+
+<div align="center">
+  <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/5.jpg" width="50%" alt="Mount Points">
+</div>
+
+<ol start="10">
+  <li>Router is Done!</li>
+</ol>
+
+<h3>Hardware Method</h3>
+
+- Flash <code>OpenWRT_17.01.7_MX25L3205.bin</code> via CH341A or any compatible BIOS programmer
+- Router is Done!
+
+<h2>USB Drive Setup</h2>
+
+- Format USB to GUID Partition Table (GPT), exFat, Standard Cluster Size
+- (I highly recommend using <a href="https://gparted.org/liveusb.php">GParted Live USB</a> or <a href="https://rufus.ie">Rufus</a> over Windows formatting)
+- Do standard USB config for PS2 (create CD/DVD folders, add backups, ARTs, etc.)
+
+<h2>PS2 Setup</h2>
+
+<h3>1st Method (Using my dump)</h3>
+
+<h4>Requirements:</h4>
+
+- FAT32 USB Drive
+- 8MB MemoryCard (orig or clone, 64mb and more <strong>not supported</strong>)
+- Ability to run ulaunchELF
+
+<ol>
+  <li>Place <code>FMCB-OPENTUNA</code> folder into root FAT32 USB Drive, insert into PS2</li>
+  <li>Run uLaunchELF</li>
+  <li>Run mass:/FMCB-OPENTUNA/FMCBInstaller.elf</li>
+  <li>Make sure that the correct MC is inserted into PS2 slot 1, slot 2 is empty</li>
+  <li>Restore MC (Press <code>R1</code> <code>R1</code> <code>Down</code> <code>Down</code> <code>X</code>), Confirm (careful, it will format your MemoryCard)</li>
+  <li>Install FMCB Multi-install (Press <code>L1</code> <code>L1</code> <code>Down</code> <code>X</code>), Confirm</li>
+  <li>Exit, Reboot PS2, Eject USB from PS2</li>
+</ol>
+
+<div align="center">
+  <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/uLE.jpg" width="50%" alt="uLaunchELF">
+</div>
+
+<p>This will install the latest FMCB and OPENTUNA on one card. FMCB automatically launches uLaunchELF, which launches OPL with a perfectly calculated timer to ensure the router has time to boot, if you're powering the router from PS2 USB. If you have a PS2 90000, or your MC is a clone, you can run the OpenTuna exploit, which then does the same. To open the FMCB menu, hold the triangle while turning on your PS2 until the menu appears.</p>
+<p>This combination of Apps should work on most (if not all) Slim PS2</p>
+
+<h3>2nd Method (Manual)</h3>
+
+<ol>
+  <li>Place <a href="https://github.com/GorGylka/UDPBD-A5-V11/releases/">OPNPS2LD-v1.2.0-Beta-1973-88079d7-UDPBD.elf</a> into bootable memory card</li>
+  <li>Delete/archive opl .cfg files, there are stored in:<br>
+      mc0:/OPL/conf_network.cfg<br>
+      mc0:/OPL/conf_opl.cfg</li>
+  <li>Make this version of OPL appear on FMCB/Funtuna menu or config to autoboot this version of OPL</li>
+  <li>Remove any USB Drive from PS2 (important!)</li>
+  <li>Connect power to the router, having first connected the LAN to PS2 and USB Drive to Router</li>
+  <li>Run OPNPS2LD..UDPBD.elf</li>
+  <li>Settings→BDM Start Mode→Manual</li>
+  <li>Settings→Default Menu→BDM Games→OK→Save Changes</li>
+</ol>
+
+<h3>3rd Method (PSxMemCard Users)</h3>
+
+- Place the contents of <code>psxmemcard.zip</code> in the root of your <code>SD2PSX</code> / <code>PSXMemCard Gen2</code> / <code>PSXMemCard Gen1</code> / <code>PicoMemcard+</code>
+
+<h2>Notes</h2>
+
+- Router takes 30 seconds to start and init drive. Please wait 1 minute in FMCB Menu before starting OPL or press Start → Exit → (run OPL again).
+
+- You cannot use any other version of OPL, UDPBD works only in this specific version.
+
+- Connect USB to router Before power on, eject USB after power off. There is no Plug-and-play, all scripts run once it starts.
+
+- If USB drive is connected to the PS2 while OPL is running, UDPBD will not start.
+
+- I disable WiFi and disable unsoldered LANs to reduce power consumption, but it still strongly recommended:
+  - Heatsink on Ralink Chip
+
+<div align="center">
+  <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/heatsink.jpg" width="30%" alt="Heatsink">
+</div>
+
+  - Hardmod MAX809TTR / ADM809 (Router doesn't always turn on after hard reboot, Without this, the router needs to leave without power for 5 seconds so that it starts up normally and does not freeze at boot.)
+
+<div align="center">
+  <img src="https://github.com/GorGylka/UDPBD-A5-V11/blob/main/max809ttr.jpg" width="30%" alt="MAX809TTR">
+</div>
+
+- If you don't see the list of games, first try setting up UDPBD with configured USB on your PC
+
+- System does not have Plug-and-play feature. Inject USB Drive before power on and eject after power off.
+
+- keepalive.txt file will be created on your flash drive. This is not a bug, but a feature - prevents USB HDD drives from parking.
+
+<h2>Building / Source</h2>
+
+<p>I use Ubuntu 16 to build OpenWRT (the latest version, 24, doesn't work). This is OpenWRT 17.01.7, built via Buildroot. You can see the assembly instructions here:</p>
+<p><a href="https://4pda.to/forum/index.php?showtopic=821686">Начальная инструкция с картинками. Метод сборки через Buildroot</a></p>
+<p>then replace .config and place files folder in your OpenWRT directory</p>
