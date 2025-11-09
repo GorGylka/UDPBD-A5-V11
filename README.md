@@ -1,4 +1,7 @@
+<head><meta name="google-site-verification" content="QzuYuNoVNI-gncgbu8z88kLcUo0Ffirk2EhNjIxrnC8" /></head>
+<body>  
 
+ 
 ![img_photo]
 <h2 align="left">OpenWRT UDPBD for A5-V11 3G/4G Mini Router</h2>
 
@@ -133,3 +136,5 @@ Settings->Default Menu->BDM Games->OK->Save Changes
 I use Ubuntu 16 to build OpenWRT (the latest version, 24, doesn't work). This is OpenWRT 17.01.7, built via Buildroot. You can see the assembly instructions here:  
 [Начальная инструкция с картинками. Метод сборки через Buildroot](https://4pda.to/forum/index.php?showtopic=821686)  
 then replace .config and place files folder in your OpenWRT directory  
+
+</body>
