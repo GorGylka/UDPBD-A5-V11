@@ -1,6 +1,12 @@
 <head><meta name="google-site-verification" content="QzuYuNoVNI-gncgbu8z88kLcUo0Ffirk2EhNjIxrnC8" /></head>
 <body>  
 
+<p align="center">
+ 
+If you haven't purchased this router yet, I recommend taking a look at [This project](https://github.com/GorGylka/Server2PS2)   
+ 
+</p>  
+
  
 ![img_photo]
 <h2 align="left">OpenWRT UDPBD for A5-V11 3G/4G Mini Router</h2>
